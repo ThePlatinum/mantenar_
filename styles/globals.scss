@@ -149,11 +149,6 @@ small {
     }
   }
 }
-
-.h__75vh {
-  height: 75vh;
-}
-
 /* Scroll UP */
 .back-to-top {
   position: fixed;
@@ -184,6 +179,11 @@ small {
 .header__scrolled.header .brand__img {
   width: 120px !important;
 }
+
+.h__75vh {
+  height: 75vh;
+}
+
 
 @media (max-width: 990px) {}
 

@@ -8,17 +8,17 @@ export default function Home() {
     {
       'name': 'Personalized',
       'img': '/asset/img.jpg',
-      'note': 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      'note': 'Your data and file shared is yours and stays that way!'
     },
     {
       'name': 'Full Control',
       'img': '/asset/bg2.jpg',
-      'note': 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      'note': 'You decide how much file you want to share and who you want to share it with.'
     },
     {
       'name': 'Unlimited',
       'img': '/asset/img.jpg',
-      'note': 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      'note': "Zero storage limitation or file size limit. It's trully your space."
     }
   ]
 
@@ -62,20 +62,19 @@ export default function Home() {
       const email = event.target.elements[1].value
       const phone = event.target.elements[2].value
       const option = event.target.elements[3].value
-      console.log('PAYSTACK_PUBLIC_KEY: ', process.env.PAYSTACK_PUBLIC_KEY);
 
       var handler = PaystackPop.setup({
+        key: 'pk_test_07a4f1c9e8de964cbc8a799311ffb1a9a25b73ec',
         email: email,
         amount: (option == 'self') ? 80000 * 100 : 100000 * 100,
         text: 'Get Mantenar',
-        publicKey: process.env.PAYSTACK_PUBLIC_KEY,
         metadata: {
           'Name': name,
           'Phone Number': phone,
           'Package': (option == 'self') ? 'Self Managed' : 'Pro Setup'
         },
-        onSuccess: (reference) => { },
-        onClose: ()=> { }
+        onSuccess: (reference) => {},
+        onClose: ()=> {}
       })
 
       handler.openIframe();
@@ -96,8 +95,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="col-md-6 d-flex flex-column justify-content-center h__75vh">
-            <img src="/asset/mantenar_demo.png" alt="" className="w-100" />
+          <div className="col-md-6 d-flex flex-column justify-content-center h__75vh pb-5 pb-md-0">
+            <img src="/screens/admin_dashboard.png" alt="" className="w-100" />
           </div>
         </div>
       </div>
@@ -105,7 +104,7 @@ export default function Home() {
       {/* Trusted by */}
       <section className="trusted_by">
         <div className='container text-center'>
-          <h6> Trusted By </h6>
+          <h5> Trusted By </h5>
           <div className="row">
             {trustees.map((t, i) => {
               return (
@@ -197,8 +196,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Modal */}
-      <div className="modal" tabIndex="-1" id='paymentModal'>
+      {/* Modals */}
+      <div className="modal fade" tabIndex="-1" id='paymentModal'>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">

@@ -267,15 +267,15 @@ section {
   border: var(--dark__brand_color) 2px solid;
   border-radius: 10px !important;
   background-color: white;
+  z-index: 15;
 }
 
 .header__scrolled.header {
   top: 0;
   width: 100vw;
   position: fixed;
-  background-color: white;
+  background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
   z-index: 10;
-  padding-bottom: 0;
 }
 
 .header__scrolled .container {
@@ -292,9 +292,6 @@ section {
 .h__75vh {
   height: 75vh;
 }
-
-
-@media (max-width: 990px) {}
 
 @media (max-width: 550px) {
   .h__75vh {

@@ -7,7 +7,11 @@ import Head from 'next/head'
 function Mantenar({ Component, pageProps }) {
   return (
     <>
-      <Head> <title>{'Mantenar'}</title> </Head>
+      <Head> 
+        <title>{'Mantenar'}</title>
+        <meta name="author" content="Emmanuel Adesina"></meta>
+        <meta name="description" content="Software  to keep organization file share secure and unbounded"></meta>
+      </Head>
       <Component {...pageProps} />
     </>
   )

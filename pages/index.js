@@ -166,7 +166,7 @@ export default function Home() {
                       <p> <small>{p.tag}</small> </p>
                     </div>
                     <p> {p.note} </p>
-                    <a data-bs-toggle="modal" data-bs-target="#paymentModal" className="btn btn__b_outline_blue">Get Now</a>
+                    <button data-bs-toggle="modal" data-bs-target="#paymentModal" className="btn btn__b_outline_blue">Get Now</button>
                   </div>
                 </div>
               )

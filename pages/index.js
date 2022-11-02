@@ -9,7 +9,7 @@ export default function Home() {
     {
       'name': 'Personalized',
       'img': '/asset/img.jpg',
-      'note': 'Your data and file shared is yours and stays that way!'
+      'note': 'Your data and the file shared stays on your server. It is yours and stays that way!'
     },
     {
       'name': 'Full Control',
@@ -90,7 +90,7 @@ export default function Home() {
           <div className="col-md-6 d-flex flex-column justify-content-center py-5 py-md-0 banner__text">
             <h1> Control your Organizations File Share </h1>
             <p>Keep things secured and unbounded with Mantenar</p>
-            <div className="d-flex flex-wrap gap-3">
+            <div className="d-flex flex-wrap gap-3 banner__btn">
               <Link href="/how" className="btn btn__b_f_outline_blue">See How it Works</Link>
               <Link href="/#pricing" className="btn btn__b_blue">Get Started</Link>
             </div>

@@ -37,6 +37,21 @@ export default function Home() {
     }
   ]
 
+  const trustees = [
+    {
+      'name': 'Platinum Techs',
+      'logo': "/trustees/platinum.png"
+    },
+    {
+      'name': 'ProsUp.xyz',
+      'logo': "/trustees/p prosup.svg"
+    },
+    {
+      'name': 'BLASS',
+      'logo': "/trustees/blass.png"
+    },
+  ]
+
   return (
     <AppLayout>
       {/* Banner */}
@@ -58,8 +73,26 @@ export default function Home() {
       </div>
 
       {/* Trusted by */}
+      <section className="trusted_by">
+        <div className='container text-center'>
+          <h6> Trusted By </h6>
+          <div class="row">
+            {trustees.map((t, i) => {
+              return (
+                <div class="col-4 text-center" key={i}>
+                  <img src={t.logo} alt={t.name} style={{
+                    width: '100px',
+                    height: '100px'
+                  }} />
+                  <p><small> {t.name} </small></p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
-      {/* Main Features */}
+      {/* Features */}
       <section className="features__section">
         <div className="container">
           <Swiper
@@ -88,12 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it Works */}
-      <section className="how_it_works">
-        <div className='container'>
-        </div>
-      </section>
-
       {/* Pricing */}
       <section class="pricing">
         <div class="container">
@@ -109,7 +136,7 @@ export default function Home() {
                       <p> <small>{p.tag}</small> </p>
                     </div>
                     <p> {p.note} </p>
-                    <a href="/#contact_us" class="btn btn__b_outline_blue">Get Now</a>
+                    <a href="" class="btn btn__b_outline_blue">Get Now</a>
                   </div>
                 </div>
               )
@@ -118,7 +145,7 @@ export default function Home() {
             <div class="col-md-4 d-flex flex-column banner__text justify-content-center pt-4 pt-md-0">
               <h2>Need something different?</h2>
               <p>Get in Touch</p>
-              <a href="/#contact_us" class="btn btn__b_outline_blue">Let Us Know</a>
+              <a href="mailto:platinumemirate@gmail.com" class="btn btn__b_outline_blue">Let Us Know</a>
             </div>
           </div>
         </div>
@@ -139,8 +166,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Contact Form */}
 
     </AppLayout >
   )

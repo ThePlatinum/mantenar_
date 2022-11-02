@@ -4,7 +4,7 @@
 
   /* Colors */
   --brand-pink: #EF5DA8;
-  --brand-pink-light: #EF5DA820;
+  --brand-pink-light: #EF5DA810;
   --dark__brand_color: #080A41;
   --dark__brand_color-light: #080A4120;
   --background-color: #FFFFFF;
@@ -225,8 +225,12 @@ section {
   }
 }
 
+.trusted_by {
+  background-color: var(--brand-pink-light)
+}
+
 .pricing {
-  background-color: #080A41;
+  background-color: var(--dark__brand_color);
   color: white;
 
   .title {

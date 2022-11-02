@@ -1,6 +1,7 @@
 import AppLayout from '../components/layouts/AppLayout'
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -90,8 +91,8 @@ export default function Home() {
             <h1> Control your Organizations File Share </h1>
             <p>Keep things secured and unbounded with Mantenar</p>
             <div className="d-flex flex-wrap gap-3">
-              <a href="/how" className="btn btn__b_f_outline_blue">See How it Works</a>
-              <a href="/#pricing" className="btn btn__b_blue">Get Started</a>
+              <Link href="/how" className="btn btn__b_f_outline_blue">See How it Works</Link>
+              <Link href="/#pricing" className="btn btn__b_blue">Get Started</Link>
             </div>
           </div>
 

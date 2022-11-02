@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Autoplay, Mousewheel, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -117,9 +118,9 @@ export default function How() {
         </SwiperSlide>
       </Swiper>
 
-      <a id="back-to-home" className="btn back-to-home p-2" role="button" href="/">
+      <Link id="back-to-home" className="btn back-to-home p-2" role="button" href="/">
         <i className="bi bi-arrow-90deg-left"></i> &nbsp; Back Home
-      </a>
+      </Link>
     </>
   )
 }

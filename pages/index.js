@@ -1,5 +1,5 @@
 import AppLayout from '../components/layouts/AppLayout'
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Home() {
@@ -22,6 +22,21 @@ export default function Home() {
     }
   ]
 
+  const prices = [
+    {
+      'name': 'Self Managed',
+      'price': "NGN 20,000 / USD 50",
+      'tag': "You decide",
+      'note': "Perfect for people with technical knowhow of installing a software and hows their private server or what's to use in a private network"
+    },
+    {
+      'name': 'Pro Setup',
+      'price': "NGN 50,000 / USD 120",
+      'tag': "Technical Advice",
+      'note': "Either you have a private network or you just want to set up one, we provide technical support and full setup of the software"
+    }
+  ]
+
   return (
     <AppLayout>
       {/* Banner */}
@@ -31,8 +46,8 @@ export default function Home() {
             <h1> Control your Organizations File Share </h1>
             <p>Keep things secured and unbounded with Mantenar</p>
             <div className="d-flex flex-wrap gap-3">
-              <a href="" className="btn btn__b_outline_blue">Demo</a>
-              <a href="" className="btn btn__b_blue">Download</a>
+              <a href="/how" className="btn btn__b_outline_blue">See How it Works</a>
+              <a href="/#pricing" className="btn btn__b_blue">Get Started</a>
             </div>
           </div>
 
@@ -42,18 +57,20 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Feedback */}
-      <div className="feedback__section">
+      {/* Trusted by */}
+
+      {/* Main Features */}
+      <section className="features__section">
         <div className="container">
           <Swiper
-            modules={[Navigation, A11y, Pagination, Scrollbar]}
+            modules={[Navigation, A11y, Pagination, Scrollbar, Autoplay]}
             loop={true} centeredSlides={true}
             navigation
-            effect="fade"
+            speed={2000}
             pagination={{ clickable: true }}
             autoplay={{
-              delay: 500,
-              disableOnInteraction: false,
+              delay: 4000,
+              disableOnInteraction: true,
             }}>
             {feedbacks.map((s, i) => {
               return (
@@ -67,8 +84,64 @@ export default function Home() {
               )
             })}
           </Swiper>
+          <div id="pricing"></div>
         </div>
-      </div>
-    </AppLayout>
+      </section>
+
+      {/* How it Works */}
+      <section className="how_it_works">
+        <div className='container'>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section class="pricing">
+        <div class="container">
+          <h3 className='title'> Pricing </h3>
+          <div class="row">
+            {prices.map((p, i) => {
+              return (
+                <div class="col-md-4 pb-4 pb-md-0" key={i}>
+                  <div class="card card-body p-5 bg-white">
+                    <h4 class="price__title"> {p.name} </h4>
+                    <div class="price">
+                      <h5> {p.price} </h5>
+                      <p> <small>{p.tag}</small> </p>
+                    </div>
+                    <p> {p.note} </p>
+                    <a href="/#contact_us" class="btn btn__b_outline_blue">Get Now</a>
+                  </div>
+                </div>
+              )
+            })}
+
+            <div class="col-md-4 d-flex flex-column banner__text justify-content-center pt-4 pt-md-0">
+              <h2>Need something different?</h2>
+              <p>Get in Touch</p>
+              <a href="/#contact_us" class="btn btn__b_outline_blue">Let Us Know</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Subscription */}
+      <section class="subscription">
+        <div className='container d-flex flex-column align-items-center text-center'>
+          <div className="w-md-50">
+            <h4>Subscribe</h4>
+            <p>We are working on many more awesome features, be among the first to know about them</p>
+            <div className="input-group">
+              <input type="text" className="form-control" name="email" placeholder="Enter your email" />
+              <span className="input-group-btn">
+                <button className="btn btn__b_blue px-4" type="button">Subscribe</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+
+    </AppLayout >
   )
 }

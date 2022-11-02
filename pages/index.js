@@ -25,15 +25,17 @@ export default function Home() {
   const prices = [
     {
       'name': 'Self Managed',
-      'price': "NGN 20,000 / USD 50",
+      'price': "NGN 80,000 / USD 180",
       'tag': "You decide",
-      'note': "Perfect for people with technical knowhow of installing a software and hows their private server or what's to use in a private network"
+      'note': "Perfect for people with technical knowhow of installing a software and hows their private server or what's to use in a private network",
+      'id': 'self'
     },
     {
       'name': 'Pro Setup',
-      'price': "NGN 50,000 / USD 120",
+      'price': "NGN 100,000 / USD 250",
       'tag': "Technical Advice",
-      'note': "Either you have a private network or you just want to set up one, we provide technical support and full setup of the software"
+      'note': "Either you have a private network or you just want to set up one, we provide technical support and full setup of the software",
+      'id': 'pro'
     }
   ]
 
@@ -52,6 +54,34 @@ export default function Home() {
     },
   ]
 
+  const handleSubmit = (event) => {
+
+    if (typeof window != "undefined") {
+      event.preventDefault()
+      const name = event.target.elements[0].value
+      const email = event.target.elements[1].value
+      const phone = event.target.elements[2].value
+      const option = event.target.elements[3].value
+      console.log('PAYSTACK_PUBLIC_KEY: ', process.env.PAYSTACK_PUBLIC_KEY);
+
+      var handler = PaystackPop.setup({
+        email: email,
+        amount: (option == 'self') ? 80000 * 100 : 100000 * 100,
+        text: 'Get Mantenar',
+        publicKey: process.env.PAYSTACK_PUBLIC_KEY,
+        metadata: {
+          'Name': name,
+          'Phone Number': phone,
+          'Package': (option == 'self') ? 'Self Managed' : 'Pro Setup'
+        },
+        onSuccess: (reference) => { },
+        onClose: ()=> { }
+      })
+
+      handler.openIframe();
+    }
+  }
+
   return (
     <AppLayout>
       {/* Banner */}
@@ -61,7 +91,7 @@ export default function Home() {
             <h1> Control your Organizations File Share </h1>
             <p>Keep things secured and unbounded with Mantenar</p>
             <div className="d-flex flex-wrap gap-3">
-              <a href="/how" className="btn btn__b_outline_blue">See How it Works</a>
+              <a href="/how" className="btn btn__b_f_outline_blue">See How it Works</a>
               <a href="/#pricing" className="btn btn__b_blue">Get Started</a>
             </div>
           </div>
@@ -76,10 +106,10 @@ export default function Home() {
       <section className="trusted_by">
         <div className='container text-center'>
           <h6> Trusted By </h6>
-          <div class="row">
+          <div className="row">
             {trustees.map((t, i) => {
               return (
-                <div class="col-4 text-center" key={i}>
+                <div className="col-4 text-center" key={i}>
                   <img src={t.logo} alt={t.name} style={{
                     width: '100px',
                     height: '100px'
@@ -122,37 +152,37 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section class="pricing">
-        <div class="container">
+      <section className="pricing">
+        <div className="container">
           <h3 className='title'> Pricing </h3>
-          <div class="row">
+          <div className="row">
             {prices.map((p, i) => {
               return (
-                <div class="col-md-4 pb-4 pb-md-0" key={i}>
-                  <div class="card card-body p-5 bg-white">
-                    <h4 class="price__title"> {p.name} </h4>
-                    <div class="price">
+                <div className="col-md-4 pb-4 pb-md-0" key={i}>
+                  <div className="card card-body p-5 bg-white">
+                    <h4 className="price__title"> {p.name} </h4>
+                    <div className="price">
                       <h5> {p.price} </h5>
                       <p> <small>{p.tag}</small> </p>
                     </div>
                     <p> {p.note} </p>
-                    <a href="" class="btn btn__b_outline_blue">Get Now</a>
+                    <a data-bs-toggle="modal" data-bs-target="#paymentModal" className="btn btn__b_outline_blue">Get Now</a>
                   </div>
                 </div>
               )
             })}
 
-            <div class="col-md-4 d-flex flex-column banner__text justify-content-center pt-4 pt-md-0">
+            <div className="col-md-4 d-flex flex-column banner__text justify-content-center pt-4 pt-md-0">
               <h2>Need something different?</h2>
               <p>Get in Touch</p>
-              <a href="mailto:platinumemirate@gmail.com" class="btn btn__b_outline_blue">Let Us Know</a>
+              <a href="mailto:platinumemirate@gmail.com" className="btn btn__b_outline_blue">Let Us Know</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Subscription */}
-      <section class="subscription">
+      <section className="subscription">
         <div className='container d-flex flex-column align-items-center text-center'>
           <div className="w-md-50">
             <h4>Subscribe</h4>
@@ -166,6 +196,45 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      <div className="modal" tabIndex="-1" id='paymentModal'>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">
+                Get Mantenar
+              </h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+
+              <form id="purchase__form" onSubmit={handleSubmit}>
+                <label htmlFor="name" className="col-form-label">Name</label>
+                <input id="name" required className="form-control" name="name" autoFocus autoComplete="name" />
+
+                <label htmlFor="email" className="col-form-label pt-3">Email</label>
+                <input id="email" required className="form-control" name="email" autoFocus autoComplete="email" />
+
+                <label htmlFor="phone" className="col-form-label pt-3">Phone</label>
+                <input type={"number"} id="phone" required className="form-control" placeholder='+234 801 2345 678' name="phone" min={100000} autoFocus autoComplete="phone" />
+
+                <label htmlFor="option" className="col-form-label pt-3">Purchase Option</label>
+                <select id="option" required className="form-control" name="option" autoFocus autoComplete="option">
+                  <option value=""> Select </option>
+                  {prices.map((p, i) => {
+                    return (<option key={i} value={p.id}> {p.name + ' (' + p.price + ')'}</option>)
+                  })}
+                </select>
+
+                <button className="btn btn__b_f_blue my-4">Proceed</button>
+                <a className="btn btn__b_f_outline_blue my-4" href='tel://+2347014293952'>Call Us Instead</a>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
 
     </AppLayout >
   )

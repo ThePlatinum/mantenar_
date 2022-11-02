@@ -64,7 +64,7 @@ section {
   padding: 0.6rem 2rem;
 }
 
-.btn__b_blue {
+.btn__b_blue, .btn__b_f_blue {
   color: white !important;
   background-color: var(--dark__brand_color) !important;
   border-color: var(--dark__brand_color) !important;
@@ -76,7 +76,7 @@ section {
   border-color: var(--dark__brand_color) !important;
 }
 
-.btn__b_outline_blue {
+.btn__b_outline_blue, .btn__b_f_outline_blue {
   color: var(--dark__brand_color);
   background-color: white;
   border-color: var(--dark__brand_color);

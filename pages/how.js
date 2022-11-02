@@ -19,10 +19,10 @@ export default function How() {
 
         <SwiperSlide>
           <div className="slide1 h-100 slide__content">
-            <div class="container h-100">
-              <div class="row h-100 ">
-                <div class="col-md-4 scroll__hight">
-                  <div class="d-flex flex-column left__space h-100">
+            <div className="container h-100">
+              <div className="row h-100 ">
+                <div className="col-md-4 scroll__hight">
+                  <div className="d-flex flex-column left__space h-100">
                     <div>
                       <h4>Install and Set up</h4>
                       <p>
@@ -32,7 +32,7 @@ export default function How() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight py-md-5">
                     <img src="/asset/mantenar_demo.png" alt="Setup" />
                   </div>
@@ -44,10 +44,10 @@ export default function How() {
 
         <SwiperSlide>
           <div className="slide1 h-100 slide__content">
-            <div class="container h-100">
-              <div class="row h-100 ">
-                <div class="col-md-4 scroll__hight">
-                  <div class="d-flex flex-column left__space h-100">
+            <div className="container h-100">
+              <div className="row h-100 ">
+                <div className="col-md-4 scroll__hight">
+                  <div className="d-flex flex-column left__space h-100">
                     <div>
                       <h4>Invite</h4>
                       <p>
@@ -57,7 +57,7 @@ export default function How() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight py-md-5">
                     <img src="/asset/mantenar_demo.png" alt="Setup" />
                   </div>
@@ -69,10 +69,10 @@ export default function How() {
 
         <SwiperSlide>
           <div className="slide1 h-100 slide__content">
-            <div class="container h-100">
-              <div class="row h-100 ">
-                <div class="col-md-4 scroll__hight">
-                  <div class="d-flex flex-column left__space h-100">
+            <div className="container h-100">
+              <div className="row h-100 ">
+                <div className="col-md-4 scroll__hight">
+                  <div className="d-flex flex-column left__space h-100">
                     <div>
                       <h4>Share & Manage</h4>
                       <p>
@@ -82,7 +82,7 @@ export default function How() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight py-md-5">
                     <img src="/asset/mantenar_demo.png" alt="Setup" />
                   </div>
@@ -94,10 +94,10 @@ export default function How() {
 
         <SwiperSlide>
           <div className="slide1 h-100 slide__content">
-            <div class="container h-100">
-              <div class="row h-100 ">
-                <div class="col-md-4 scroll__hight">
-                  <div class="d-flex flex-column left__space h-100">
+            <div className="container h-100">
+              <div className="row h-100 ">
+                <div className="col-md-4 scroll__hight">
+                  <div className="d-flex flex-column left__space h-100">
                     <div>
                       <h4>Discuss</h4>
                       <p>
@@ -106,7 +106,7 @@ export default function How() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight py-md-5">
                     <img src="/asset/mantenar_demo.png" alt="Setup" />
                   </div>

@@ -65,7 +65,8 @@ export default function Home() {
       const option = event.target.elements[3].value
 
       var handler = PaystackPop.setup({
-        key: 'pk_test_07a4f1c9e8de964cbc8a799311ffb1a9a25b73ec',
+        // key: 'pk_test_07a4f1c9e8de964cbc8a799311ffb1a9a25b73ec',
+        key: 'pk_live_55029f5e601193a0c61870bae0c86bba1f5d5461',
         email: email,
         amount: (option == 'self') ? 80000 * 100 : 100000 * 100,
         text: 'Get Mantenar',

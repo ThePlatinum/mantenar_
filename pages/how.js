@@ -35,7 +35,7 @@ export default function How() {
                 </div>
                 <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight">
-                    <img src="/screens/invited_user_profile.png" alt="Setup" />
+                    <img src="/screens/org_setup.png" alt="Setup" />
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function How() {
                     <div>
                       <h4>Discuss</h4>
                       <p>
-                        Quick and organized communication and discussion on the file shared
+                        Quick and organized real-time chat for communication and discussion on the file shared.
                       </p>
                     </div>
                   </div>

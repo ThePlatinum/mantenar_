@@ -8,17 +8,17 @@ export default function Home() {
   const feedbacks = [
     {
       'name': 'Personalized',
-      'img': '/asset/img.jpg',
+      'img': '/asset/woman-touching-smart-technology-holographic-interface.jpg',
       'note': 'Your data and the file shared stays on your server. It is yours and stays that way!'
     },
     {
       'name': 'Full Control',
-      'img': '/asset/bg2.jpg',
+      'img': '/asset/woman-wearing-virtual-reality-headset-playing-video-games.jpg',
       'note': 'You decide how much file you want to share and who you want to share it with.'
     },
     {
       'name': 'Unlimited',
-      'img': '/asset/img.jpg',
+      'img': '/asset/6864937_23324.jpg',
       'note': "Zero storage limitation or file size limit. It's trully your space."
     }
   ]

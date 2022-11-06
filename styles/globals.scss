@@ -187,19 +187,7 @@ section {
     }
   }
 
-  .slide1 {
-    background-color: #080A4180;
-  }
-
-  .slide2 {
-    background-color: #080A4180;
-  }
-
-  .slide3 {
-    background-color: #080A4180;
-  }
-
-  .slide4 {
+  .slide1, .slide2, .slide3, .slide4 {
     background-color: #080A4180;
   }
 
@@ -212,7 +200,7 @@ section {
       width: 10px;
   
       &-active {
-        width: 18px;
+        width: 20px;
       }
     }
   }
@@ -306,16 +294,6 @@ section {
 
   .banner__btn {
     justify-content: center !important;
-  }
-}
-
-@keyframes breath {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.015);
   }
 }
 

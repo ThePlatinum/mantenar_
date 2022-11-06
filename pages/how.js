@@ -85,7 +85,7 @@ export default function How() {
                 </div>
                 <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight">
-                    <img src="/screens/invited_user_profile.png" alt="Setup" />
+                    <img src="/screens/share_new_file.png" alt="Setup" />
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function How() {
                 </div>
                 <div className="col-md-8">
                   <div className="d-flex justify-content-center align-item-center scroll__hight">
-                    <img src="/screens/invited_user_profile.png" alt="Setup" />
+                    <img src="/screens/the_file_and_chat.png" alt="Setup" />
                   </div>
                 </div>
               </div>

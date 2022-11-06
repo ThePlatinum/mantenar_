@@ -11,6 +11,7 @@ function Mantenar({ Component, pageProps }) {
         <title>{'Mantenar'}</title>
         <meta name="author" content="Emmanuel Adesina"></meta>
         <meta name="description" content="Software  to keep organization file share secure and unbounded"></meta>
+        <link rel="apple-touch-icon" href="/asset/mantenar.svg" />
       </Head>
       <Component {...pageProps} />
     </>
